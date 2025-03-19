@@ -49,12 +49,7 @@ class Navbar : Template<FlowContent> {
                     div("btn btn-ghost lg:hidden") {
                         tabIndex = "0"
                         role = "button"
-                        svg("w-5 h-5") {
-                            attributes["fill"] = "none"
-                            attributes["viewBox"] = "0 0 24 24"
-                            attributes["stroke"] = "currentColor"
-                            +"""<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />"""
-                        }
+                        i("fa fa-solid fa-bars h-6 w-6 text-black dark:text-white")
                     }
                     ul("menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow") {
                         tabIndex = "0"
