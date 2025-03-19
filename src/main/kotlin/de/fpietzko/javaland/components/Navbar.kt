@@ -63,7 +63,17 @@ class Navbar : Template<FlowContent> {
                         }
                     }
                 }
-                a(classes = "btn btn-ghost text-xl") { +"Kotlin HTMX+Kotlin Demo" }
+                a(classes = "btn btn-ghost text-xl") {
+                    span("text-secondary") {
+                        +"Kotlin HTML"
+                    }
+                    span {
+                        +" + "
+                    }
+                    span("text-primary") {
+                        +"HTMX Demo"
+                    }
+                }
             }
             div("navbar-center hidden lg:flex") {
                 ul("menu menu-horizontal px-1") {
