@@ -78,7 +78,7 @@ class Navbar : Template<FlowContent> {
                 }
             }
 
-            div("navbar-end") {
+            div("navbar-end hidden lg:flex") {
                 a(href = "https://iits.de", classes = "btn btn-ghost") {
                     target = "_blank"
                     span {
