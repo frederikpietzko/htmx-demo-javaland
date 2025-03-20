@@ -1,4 +1,5 @@
 package de.fpietzko.javaland.util
+// heavily inspired by the KTOR Server HTML DSL https://ktor.io/docs/server-html-dsl.html
 
 interface Template<in T> {
     fun T.render(): Unit
