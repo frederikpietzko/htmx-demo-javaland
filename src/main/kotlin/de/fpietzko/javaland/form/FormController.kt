@@ -92,6 +92,7 @@ fun FlowContent.registerForm(action: String = "/form") {
         hxTrigger = "submit"
         hxPost = action
         hxTarget = "#registerForm"
+        hxSwap = "outerHTML"
 
         h4("text-2xl text-center font-bold text-primary") {
             +"Register as a Javaland Visitor"

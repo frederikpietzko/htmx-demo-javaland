@@ -23,18 +23,11 @@ import java.util.concurrent.CopyOnWriteArrayList
 class ServerValidationForm(
     private val visitorRepository: JavalandVisitorRepository,
 ) {
-    private val emitters: MutableList<SseEmitter> = CopyOnWriteArrayList()
 
     @GetMapping
     @ResponseBody
     fun validatedForm() = respondTemplate(CommonLayout("Validated Form")) {
         children {
-            div("toast") {
-                id = "toast"
-                hxExt("sse")
-                sseSwap = "message"
-                sseConnect = "/form/server-validation/success-sse"
-            }
             serverValidatedForm()
         }
     }
@@ -82,49 +75,8 @@ class ServerValidationForm(
             }
         }
         visitorRepository.add(model.toVisitor())
-        sendSse("Added Visitor ${model.name}!")
         return respondHtmlSnippet {
             serverValidatedForm()
-        }
-    }
-
-    @GetMapping("/success-sse")
-    fun handleSSE(): SseEmitter {
-        val emitter = SseEmitter()
-        emitters.add(emitter)
-        emitter.onCompletion {
-            emitters.remove(emitter)
-        }
-        emitter.onTimeout {
-            emitters.remove(emitter)
-        }
-        emitter.onError {
-            emitters.remove(emitter)
-        }
-        return emitter
-    }
-
-    private enum class SubmissionResultType {
-        SUCCESS, FAILURE
-    }
-
-    private fun sendSse(message: String, type: SubmissionResultType = SubmissionResultType.SUCCESS) {
-        emitters.forEach { emitter ->
-            emitter.runCatching {
-                sendHtml {
-                    div(
-                        "alert relative " + when (type) {
-                            SubmissionResultType.SUCCESS -> "alert-success"
-                            SubmissionResultType.FAILURE -> "alert-error"
-                        }
-                    ) {
-                        hyperscript("on load wait 2s then add .hidden")
-                        span { +message }
-                    }
-                }
-            }.onFailure {
-                emitters.remove(emitter)
-            }
         }
     }
 }
