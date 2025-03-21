@@ -1,6 +1,6 @@
 package de.fpietzko.javaland.examples.form.controller
 
-import de.fpietzko.javaland.components.BootstrapHtml
+import de.fpietzko.javaland.components.layout.BootstrapHtml
 import de.fpietzko.javaland.examples.form.model.RegisterFormSubmission
 import de.fpietzko.javaland.examples.form.view.components.registerForm
 import de.fpietzko.javaland.html.mvc.HTMLResponseProvider

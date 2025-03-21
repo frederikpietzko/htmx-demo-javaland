@@ -1,19 +1,13 @@
 package de.fpietzko.javaland.examples.form.view.components
 
-import de.fpietzko.javaland.components.checkbox
-import de.fpietzko.javaland.components.fieldset
+import de.fpietzko.javaland.components.form.FieldsetProps
+import de.fpietzko.javaland.components.form.checkbox
+import de.fpietzko.javaland.components.form.fieldset
 import de.fpietzko.javaland.html.htmx.hxPost
 import de.fpietzko.javaland.html.htmx.hxSwap
 import de.fpietzko.javaland.html.htmx.hxTarget
 import de.fpietzko.javaland.html.htmx.hxTrigger
-import kotlinx.html.ButtonType
-import kotlinx.html.FlowContent
-import kotlinx.html.InputType
-import kotlinx.html.button
-import kotlinx.html.div
-import kotlinx.html.form
-import kotlinx.html.h4
-import kotlinx.html.id
+import kotlinx.html.*
 
 fun FlowContent.registerForm(action: String = "/form") {
     form(classes = "flex flex-col gap-4 w-sm lg:w-lg m-auto") {
@@ -27,14 +21,16 @@ fun FlowContent.registerForm(action: String = "/form") {
             +"Register as a Javaland Visitor"
         }
         fieldset(
-            "Name",
-            name = "name",
-            placeholder = "Max Mustermann",
-            helperText = "Please enter your full name"
+            FieldsetProps(
+                "Name",
+                name = "name",
+                placeholder = "Max Mustermann",
+                helperText = "Please enter your full name"
+            )
         ) {
             required = true
         }
-        fieldset("Age", name = "age", type = InputType.number, helperText = "Please enter your age") {
+        fieldset(FieldsetProps("Age", name = "age", type = InputType.number, helperText = "Please enter your age")) {
             required = true
             min = "18"
             max = "100"

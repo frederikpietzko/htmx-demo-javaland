@@ -5,7 +5,7 @@ import de.fpietzko.javaland.examples.table.model.TableModel
 import de.fpietzko.javaland.html.htmx.hxExt
 import de.fpietzko.javaland.html.htmx.wsConnect
 import de.fpietzko.javaland.html.templates.insert
-import de.fpietzko.javaland.components.CommonLayout
+import de.fpietzko.javaland.components.layout.CommonLayout
 import de.fpietzko.javaland.examples.table.view.components.visitorTable
 import kotlinx.html.HTML
 import kotlinx.html.div

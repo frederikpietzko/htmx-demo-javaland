@@ -1,5 +1,6 @@
-package de.fpietzko.javaland.components
+package de.fpietzko.javaland.components.layout
 
+import de.fpietzko.javaland.components.layout.Layout
 import de.fpietzko.javaland.html.htmx.hxBoost
 import de.fpietzko.javaland.html.htmx.hxExt
 import de.fpietzko.javaland.html.templates.Template

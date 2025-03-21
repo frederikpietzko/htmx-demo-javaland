@@ -1,29 +1,9 @@
-package de.fpietzko.javaland.components
+package de.fpietzko.javaland.components.datatable
 
 import de.fpietzko.javaland.html.htmx.hxGet
 import de.fpietzko.javaland.html.htmx.hxTarget
 import de.fpietzko.javaland.html.htmx.hxTrigger
 import kotlinx.html.*
-
-enum class SortDirection {
-    ASC, DESC, NONE;
-
-    fun next() = when (this) {
-        ASC -> DESC
-        DESC -> NONE
-        NONE -> ASC
-    }
-}
-
-data class Column<T>(
-    val headerName: String,
-    val value: (T) -> Any,
-    val sortable: Boolean = false,
-    val sortableName: String = "",
-    val sortWith: String = "",
-    val sortDirection: SortDirection = SortDirection.NONE,
-    val sortTarget: String = ""
-)
 
 fun <T> FlowContent.dataTable(data: List<T>, columns: List<Column<T>>, id: String? = null, block: DIV.() -> Unit = {}) {
     div("overflow-x-auto rounded-box border border-base-content/5 bg-base-100") {

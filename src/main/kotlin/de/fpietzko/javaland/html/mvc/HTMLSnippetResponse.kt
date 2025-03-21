@@ -1,6 +1,6 @@
 package de.fpietzko.javaland.html.mvc
 
-import de.fpietzko.javaland.components.Fragment
+import de.fpietzko.javaland.components.layout.Fragment
 import kotlinx.html.FlowContent
 import kotlinx.html.consumers.delayed
 import kotlinx.html.stream.HTMLStreamBuilder

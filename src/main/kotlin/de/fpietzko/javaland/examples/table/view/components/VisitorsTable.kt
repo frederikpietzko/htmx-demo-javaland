@@ -1,8 +1,8 @@
 package de.fpietzko.javaland.examples.table.view.components
 
-import de.fpietzko.javaland.components.Column
-import de.fpietzko.javaland.components.SortDirection
-import de.fpietzko.javaland.components.dataTable
+import de.fpietzko.javaland.components.datatable.Column
+import de.fpietzko.javaland.components.datatable.SortDirection
+import de.fpietzko.javaland.components.datatable.dataTable
 import de.fpietzko.javaland.examples.table.model.TableModel
 import de.fpietzko.javaland.examples.table.model.OrderedBy
 import de.fpietzko.javaland.examples.table.model.OrderingState

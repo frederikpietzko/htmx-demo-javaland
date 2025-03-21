@@ -1,5 +1,6 @@
-package de.fpietzko.javaland.components
+package de.fpietzko.javaland.components.layout
 
+import de.fpietzko.javaland.components.layout.Navbar
 import de.fpietzko.javaland.html.templates.Slot
 import de.fpietzko.javaland.html.templates.Template
 import de.fpietzko.javaland.html.templates.insert

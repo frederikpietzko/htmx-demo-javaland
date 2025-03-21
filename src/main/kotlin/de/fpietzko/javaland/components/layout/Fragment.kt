@@ -1,4 +1,4 @@
-package de.fpietzko.javaland.components
+package de.fpietzko.javaland.components.layout
 
 import kotlinx.html.FlowContent
 import kotlinx.html.HTMLTag

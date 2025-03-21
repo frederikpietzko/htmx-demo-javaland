@@ -1,21 +1,11 @@
 package de.fpietzko.javaland.examples.form.view.components
 
-import de.fpietzko.javaland.components.checkbox
-import de.fpietzko.javaland.components.fieldset
+import de.fpietzko.javaland.components.form.FieldsetProps
+import de.fpietzko.javaland.components.form.checkbox
+import de.fpietzko.javaland.components.form.fieldset
 import de.fpietzko.javaland.examples.form.model.RegisterFormSubmission
-import de.fpietzko.javaland.html.htmx.hxPost
-import de.fpietzko.javaland.html.htmx.hxSelect
-import de.fpietzko.javaland.html.htmx.hxSwap
-import de.fpietzko.javaland.html.htmx.hxTarget
-import de.fpietzko.javaland.html.htmx.hxTrigger
-import kotlinx.html.ButtonType
-import kotlinx.html.FlowContent
-import kotlinx.html.InputType
-import kotlinx.html.button
-import kotlinx.html.div
-import kotlinx.html.form
-import kotlinx.html.h4
-import kotlinx.html.id
+import de.fpietzko.javaland.html.htmx.*
+import kotlinx.html.*
 
 fun FlowContent.serverValidatedForm(model: RegisterFormSubmission? = null, errors: Map<String, String> = emptyMap()) {
     form(classes = "flex flex-col gap-4 w-sm lg:w-lg m-auto") {
@@ -28,12 +18,14 @@ fun FlowContent.serverValidatedForm(model: RegisterFormSubmission? = null, error
             +"Register as a Javaland Visitor"
         }
         fieldset(
-            "Name",
-            id = "name",
-            name = "name",
-            placeholder = "Max Mustermann",
-            helperText = "Please enter your full name",
-            error = errors["name"]
+            FieldsetProps(
+                "Name",
+                id = "name",
+                name = "name",
+                placeholder = "Max Mustermann",
+                helperText = "Please enter your full name",
+                error = errors["name"]
+            )
         ) {
             hxTrigger = "change"
             hxPost = "/form/server-validation/validate"
@@ -43,12 +35,14 @@ fun FlowContent.serverValidatedForm(model: RegisterFormSubmission? = null, error
             model?.name?.let { value = it }
         }
         fieldset(
-            "Age",
-            id = "age",
-            name = "age",
-            type = InputType.number,
-            helperText = "Please enter your age",
-            error = errors["age"]
+            FieldsetProps(
+                "Age",
+                id = "age",
+                name = "age",
+                type = InputType.number,
+                helperText = "Please enter your age",
+                error = errors["age"]
+            )
         ) {
             hxTrigger = "change"
             hxPost = "/form/server-validation/validate"

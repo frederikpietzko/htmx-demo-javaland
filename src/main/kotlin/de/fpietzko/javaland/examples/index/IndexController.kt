@@ -1,6 +1,6 @@
 package de.fpietzko.javaland.examples.index
 
-import de.fpietzko.javaland.components.CommonLayout
+import de.fpietzko.javaland.components.layout.CommonLayout
 import de.fpietzko.javaland.html.mvc.respondTemplate
 import kotlinx.html.a
 import kotlinx.html.div

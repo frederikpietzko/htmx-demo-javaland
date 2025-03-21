@@ -1,6 +1,6 @@
 package de.fpietzko.javaland.examples.table.controller
 
-import de.fpietzko.javaland.components.SortDirection
+import de.fpietzko.javaland.components.datatable.SortDirection
 import de.fpietzko.javaland.examples.form.model.RegisterFormSubmission
 import de.fpietzko.javaland.examples.form.view.components.registerForm
 import de.fpietzko.javaland.examples.table.model.OrderingState

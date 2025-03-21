@@ -1,7 +1,19 @@
-package de.fpietzko.javaland.components
+package de.fpietzko.javaland.components.layout
 
 import de.fpietzko.javaland.html.templates.Template
-import kotlinx.html.*
+import kotlinx.html.FlowContent
+import kotlinx.html.UL
+import kotlinx.html.a
+import kotlinx.html.details
+import kotlinx.html.div
+import kotlinx.html.i
+import kotlinx.html.img
+import kotlinx.html.li
+import kotlinx.html.role
+import kotlinx.html.span
+import kotlinx.html.summary
+import kotlinx.html.tabIndex
+import kotlinx.html.ul
 
 class Navbar : Template<FlowContent> {
     data class MenuItem(

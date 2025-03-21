@@ -2,7 +2,7 @@ package de.fpietzko.javaland.examples.form.view
 
 import de.fpietzko.javaland.examples.form.view.components.serverValidatedForm
 import de.fpietzko.javaland.html.templates.insert
-import de.fpietzko.javaland.components.CommonLayout
+import de.fpietzko.javaland.components.layout.CommonLayout
 import kotlinx.html.HTML
 
 fun HTML.serverValidatedRegisterPage() {
