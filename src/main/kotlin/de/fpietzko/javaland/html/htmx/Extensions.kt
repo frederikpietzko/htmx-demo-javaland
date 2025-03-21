@@ -78,3 +78,7 @@ var CommonAttributeGroupFacade.wsConnect: String
     set(value) {
         this.attributes["ws-connect"] = value
     }
+
+fun CommonAttributeGroupFacade.hxPreserve() {
+    this.attributes["hx-preserve"] = "true"
+}

@@ -11,8 +11,9 @@ fun FlowContent.serverValidatedForm(model: RegisterFormSubmission? = null, error
     form(classes = "flex flex-col gap-4 w-sm lg:w-lg m-auto") {
         id = "registerForm"
         hxTrigger = "submit"
-        hxPost = "/form"
+        hxPost = "/form/server-validation"
         hxTarget = "#registerForm"
+
 
         h4("text-2xl text-center font-bold text-primary") {
             +"Register as a Javaland Visitor"
@@ -49,7 +50,6 @@ fun FlowContent.serverValidatedForm(model: RegisterFormSubmission? = null, error
             hxTarget = "#age"
             hxSelect = "#age"
             hxSwap = "outerHTML"
-
             model?.age?.let { value = it.toString() }
         }
         div("grid grid-cols-2 gap-2") {

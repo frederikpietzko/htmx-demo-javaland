@@ -20,7 +20,7 @@ fun FlowContent.fieldset(
     legend { +props.label }
     input(
         type = props.type,
-        name = name,
+        name = props.name,
         classes = "w-full input " + if (props.error != null) "input-error" else "",
     ) {
         props.placeholder?.let { this.placeholder = it }
