@@ -1,6 +1,6 @@
 package de.fpietzko.javaland.components
 
-import de.fpietzko.javaland.util.Template
+import de.fpietzko.javaland.html.templates.Template
 import kotlinx.html.*
 
 class Navbar : Template<FlowContent> {

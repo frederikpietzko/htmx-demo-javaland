@@ -1,6 +1,9 @@
 package de.fpietzko.javaland.components
 
-import de.fpietzko.javaland.util.*
+import de.fpietzko.javaland.html.templates.Slot
+import de.fpietzko.javaland.html.templates.Template
+import de.fpietzko.javaland.html.templates.TemplateSlot
+import de.fpietzko.javaland.html.templates.insert
 import kotlinx.html.*
 
 class Layout : Template<BODY> {

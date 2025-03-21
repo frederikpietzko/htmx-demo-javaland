@@ -1,8 +1,8 @@
 package de.fpietzko.javaland.components
 
-import de.fpietzko.javaland.util.hxGet
-import de.fpietzko.javaland.util.hxTarget
-import de.fpietzko.javaland.util.hxTrigger
+import de.fpietzko.javaland.html.htmx.hxGet
+import de.fpietzko.javaland.html.htmx.hxTarget
+import de.fpietzko.javaland.html.htmx.hxTrigger
 import kotlinx.html.*
 
 enum class SortDirection {

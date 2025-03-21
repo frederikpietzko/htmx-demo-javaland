@@ -1,6 +1,10 @@
 package de.fpietzko.javaland.components
 
-import de.fpietzko.javaland.util.*
+import de.fpietzko.javaland.html.htmx.hxBoost
+import de.fpietzko.javaland.html.htmx.hxExt
+import de.fpietzko.javaland.html.templates.Template
+import de.fpietzko.javaland.html.templates.TemplateSlot
+import de.fpietzko.javaland.html.templates.insert
 import kotlinx.html.*
 
 class BootstrapHtml(
