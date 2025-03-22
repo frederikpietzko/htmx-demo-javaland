@@ -2,6 +2,7 @@ package de.fpietzko.javaland.examples.realtime.view
 
 import de.fpietzko.javaland.components.layout.CommonLayout
 import de.fpietzko.javaland.examples.realtime.model.VisitorStatistic
+import de.fpietzko.javaland.examples.realtime.view.components.stats
 import de.fpietzko.javaland.html.htmx.hxExt
 import de.fpietzko.javaland.html.htmx.wsConnect
 import de.fpietzko.javaland.html.templates.insert

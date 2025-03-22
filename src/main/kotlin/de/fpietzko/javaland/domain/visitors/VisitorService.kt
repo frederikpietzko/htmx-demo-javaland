@@ -30,12 +30,6 @@ class VisitorService(
             in Int.MIN_VALUE..17 -> errors["age"] = "You must be at least 18 years old"
             in 100..Int.MAX_VALUE -> errors["age"] = "You must be younger than 100 years"
         }
-        if (!model.knowsKotlin && !model.knowsJava && !model.knowsHtmx) {
-            errors["knowsKotlin"] = "You must know at least one programming language"
-        }
-        if (!model.dislikesJavascript) {
-            errors["dislikesJavascript"] = "You must dislike JavaScript"
-        }
         return errors
     }
 }

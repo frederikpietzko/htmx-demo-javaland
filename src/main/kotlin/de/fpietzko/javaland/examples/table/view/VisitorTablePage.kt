@@ -1,15 +1,12 @@
 package de.fpietzko.javaland.examples.table.view
 
-import de.fpietzko.javaland.examples.form.view.components.registerForm
-import de.fpietzko.javaland.examples.table.model.TableModel
-import de.fpietzko.javaland.html.htmx.hxExt
-import de.fpietzko.javaland.html.htmx.wsConnect
-import de.fpietzko.javaland.html.templates.insert
 import de.fpietzko.javaland.components.layout.CommonLayout
+import de.fpietzko.javaland.examples.table.model.TableModel
+import de.fpietzko.javaland.examples.table.view.components.visitorSearchAndAddBar
 import de.fpietzko.javaland.examples.table.view.components.visitorTable
-import kotlinx.html.HTML
-import kotlinx.html.div
-import kotlinx.html.id
+import de.fpietzko.javaland.html.htmx.*
+import de.fpietzko.javaland.html.templates.insert
+import kotlinx.html.*
 
 fun HTML.visitorTablePage(model: TableModel) = insert(CommonLayout("Table Demo")) {
     children {
@@ -18,7 +15,14 @@ fun HTML.visitorTablePage(model: TableModel) = insert(CommonLayout("Table Demo")
             hxExt("ws")
             wsConnect = "/form/ws"
         }
-        registerForm()
-        visitorTable(model)
+        div("flex flex-col p-4 gap-3") {
+            visitorSearchAndAddBar()
+            div {
+                hxTrigger = "load"
+                hxGet = "/table/drawer"
+                hxSwap = "outerHTML"
+            }
+            visitorTable(model)
+        }
     }
 }

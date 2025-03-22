@@ -3,7 +3,7 @@ package de.fpietzko.javaland.examples.realtime.controller
 import de.fpietzko.javaland.config.websocket.WebsocketSessionHolder
 import de.fpietzko.javaland.domain.visitors.JavalandVisitorRepository
 import de.fpietzko.javaland.examples.realtime.model.VisitorStatistic
-import de.fpietzko.javaland.examples.realtime.view.stats
+import de.fpietzko.javaland.examples.realtime.view.components.stats
 import de.fpietzko.javaland.examples.realtime.view.visitorStatisticsPage
 import de.fpietzko.javaland.html.mvc.HTMLResponseProvider
 import de.fpietzko.javaland.html.mvc.respondHtml

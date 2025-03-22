@@ -1,4 +1,4 @@
-package de.fpietzko.javaland.examples.realtime.view
+package de.fpietzko.javaland.examples.realtime.view.components
 
 import de.fpietzko.javaland.examples.realtime.model.VisitorStatistic
 import kotlinx.html.FlowContent
