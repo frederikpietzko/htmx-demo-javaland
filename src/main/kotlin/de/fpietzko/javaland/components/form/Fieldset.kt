@@ -21,7 +21,7 @@ fun FlowContent.fieldset(
     input(
         type = props.type,
         name = props.name,
-        classes = "w-full input " + if (props.error != null) "input-error" else "",
+        classes = "w-full input" + if (props.error != null) " input-error" else "",
     ) {
         props.placeholder?.let { this.placeholder = it }
         block()
