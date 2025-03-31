@@ -28,7 +28,7 @@ class ServerValidatedFormController(
     @PostMapping
     fun submitForm(model: RegisterFormSubmission): HTMLResponseProvider {
         val errors = visitorService.validateSubmission(model)
-        if (!errors.isEmpty()) {
+        if (errors.isNotEmpty()) {
             return respondHtmlSnippet {
                 serverValidatedForm(model, errors)
             }

@@ -12,29 +12,23 @@ data class FieldsetProps(
     val id: String? = null,
 )
 
-fun FlowContent.fieldset(
-    props: FieldsetProps,
-    block: INPUT.() -> Unit = {}
-) = fieldSet("fieldset w-full") {
-    props.id?.let { this.id = it }
-    legend { +props.label }
-    input(
-        type = props.type,
-        name = props.name,
-        classes = "w-full input" + if (props.error != null) " input-error" else "",
-    ) {
-        props.placeholder?.let { this.placeholder = it }
-        block()
-    }
-    if (props.error != null) {
-        p("fieldset-label text-red-500") {
+typealias InputAttributeBuilder = INPUT.() -> Unit
+
+fun FlowContent.fieldset(props: FieldsetProps, attributeBuilder: InputAttributeBuilder = {}) =
+    fieldSet("fieldset w-full") {
+        props.id?.let { this.id = it }
+        legend { +props.label }
+        val classes = "w-full input" + if (props.error != null) " input-error" else ""
+        input(type = props.type, name = props.name, classes = classes) {
+            props.placeholder?.let { this.placeholder = it }
+            attributeBuilder()
+        }
+        if (props.error != null) p("fieldset-label text-red-500") {
             +props.error
         }
-    } else {
-        props.helperText?.let {
+        else props.helperText?.let {
             p("fieldset-label") {
                 +it
             }
         }
     }
-}
