@@ -55,7 +55,7 @@ tasks.withType<Test> {
 }
 
 tasks.bootBuildImage {
-    imageName = "your-dockerhub-username/htmx-demo-javaland:${project.version}"
+    imageName = "${System.getenv("DOCKER_USERNAME")}/${project.name}:${project.version}"
 
     docker {
         publishRegistry {

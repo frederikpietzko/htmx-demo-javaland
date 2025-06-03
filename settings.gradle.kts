@@ -1,1 +1,1 @@
-rootProject.name = "htmx-demo-javaland"
+rootProject.name = "htmx-demo"
