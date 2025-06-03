@@ -55,7 +55,7 @@ tasks.withType<Test> {
 }
 
 tasks.bootBuildImage {
-    imageName = "${System.getenv("DOCKER_USERNAME")}/${project.name}:${project.version}"
+    imageName = "${System.getenv("DOCKER_USERNAME")}/${project.name}:latest"
 
     docker {
         publishRegistry {
