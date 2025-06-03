@@ -61,7 +61,6 @@ tasks.bootBuildImage {
         publishRegistry {
             username = project.findProperty("dockerUsername") as String? ?: System.getenv("DOCKER_USERNAME")
             password = project.findProperty("dockerPassword") as String? ?: System.getenv("DOCKER_PASSWORD")
-            url = "https://index.docker.io/v1/"
         }
     }
 }
